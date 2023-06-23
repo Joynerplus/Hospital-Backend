@@ -1,14 +1,13 @@
-<h1>CENTRO MEDICO VETERINARIO BACKEND</h1>
-<h2>LISTADO DE MEDICOS VETERINARIOS</h2>
+<h1>CENTRO MEDICO HOSPITAL BACKEND</h1>
+<h2>{{subtitulo}}</h2>
 <table>
 <thead>
     <tr>
         <th>Cedula</th>
         <th>Nombre</th>
         <th>Apellido</th>
-        <th>Especialidad</th>
-        <th>Consultorio</th>
-        <th>Correo</th>
+        <th>Edad</th>
+        <th>Telefono</th>  
         <th>Opciones</th>
     </tr>
 </thead>
@@ -17,10 +16,9 @@
     <tr>
         <td>{{cedula}}</td>
         <td>{{nombres}}</td>
-        <td>{{apellidos}}</td>
-        <td>{{especialidad}}</td>
-        <td>{{consultorio}}</td>
-        <td>{{correo}}</td>
+        <td>{{apellido}}</td>
+        <td>{{edad}}</td>
+        <td>{{telefono}}</td>       
         <td><a href="/medicos/eliminar/{{cedula}}">Eliminar</a></td>
     </tr>
     {{/each}}
@@ -29,9 +27,8 @@
 
 <div id="botones">
   <input type="button" class="boton" id="botonVolver" value="Volver" onclick="irAlHome()">
-  <input type="button" class="boton" id="botonAgregar" value="{{botonAgregar}}" onclick="agregarMedico()">
+  <input type="button" class="boton" id="botonAgregar" value="{{botonAgregar}}" onclick="agregarPaciente()">
 </div>
-
 
 
 

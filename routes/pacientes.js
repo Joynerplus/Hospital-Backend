@@ -3,14 +3,9 @@ var router = express.Router();
 const { connection } = require('../database/conexion.js')
 
 router.get('/', function(req, res, next) {
-  res.render('medicos', { 
-    title: 'Medicos', 
-    subtitulo: 'LISTADO DE MEDICOS',
-    botonAgregar: 'agregar medicos'
-    
+    res.render('pacientes', { 
+    title: 'Pacientes',  
+    botonAgregar: 'agregar pacientes'        
+    });
   });
-});
-
-
-
 module.exports = router;
