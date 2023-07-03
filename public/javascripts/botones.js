@@ -3,10 +3,10 @@ function irAlHome() {
 }
 
 function agregarMedico() {
-    window.location.href = '/agregar-medico';
+    window.location.href = '/medicos/agregar-medico';
 }
 
 function agregarPaciente() {
-    window.location.href = '/agregar-paciente';
+    window.location.href = '/pacientes/agregar-paciente';
 }
 
