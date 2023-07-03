@@ -1,0 +1,33 @@
+<div id="formularioPacientes">
+  <form action="./agregar" method="post" id="">
+    <h2>REGISTRO DE PACIENTES</h2>
+    <label for="nombrePaciente">Nombre:<span> *</span></label>
+    <input type="text" id="nombrePaciente" name="nombrePaciente" required /><br
+    />
+
+    <label for="apellidoPaciente">Apellido:<span> *</span></label>
+    <input
+      type="text"
+      id="apellidoPaciente"
+      name="apellidoPaciente"
+      required
+    /><br />
+
+    <label for="cedulaPaciente">Cedula:<span> *</span></label>
+    <input type="text" id="cedulaPaciente" name="cedulaPaciente" required /><br
+    />
+
+    <label for="edadPaciente">Edad:<span> *</span></label>
+    <input type="number" id="edadPaciente" name="edadPaciente" required /><br />
+
+    <label for="telefonoPaciente">Telefono:<span> *</span></label>
+    <input
+      type="number"
+      id="telefonoPaciente"
+      name="telefonoPaciente"
+      required
+    /><br />    
+    <input id="enviar" type="submit" value="Enviar" />
+    <a class="volver" href="/pacientes">Volver</a>
+  </form>
+</div>
