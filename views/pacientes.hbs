@@ -1,5 +1,4 @@
 <h2>{{subtitulo}}</h2>
-
 <table>
 <thead>
     <tr>
@@ -14,9 +13,8 @@
 <tbody>
     {{#each pacientes}}
     <tr>
-
         <form action="/pacientes/actualizar/{{cedula}}" method="post">
-        <td><input type="text" class="celdas" id="cedulaPaciente" name="cedulaPaciente" value="{{cedula}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
+        <td><input type="text" class="celdas" id="cedulaPaciente" name="cedulaPaciente" value="{{cedula}}" disabled></td>
         <td><input type="text" class="celdas" id="nombrePaciente" name="nombrePaciente" value="{{nombre}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
         <td><input type="text" class="celdas" id="apellidoPaciente" name="apellidoPaciente" value="{{apellido}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
         <td><input type="number" class="celdas" id="edadPaciente" name="edadPaciente" value="{{edad}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>

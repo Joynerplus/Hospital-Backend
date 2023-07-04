@@ -15,7 +15,6 @@ router.get('/', function (req, res, next) {
                 pacientes: results, opcion:
                     'disabled', estado: true
             })
-
         }
     });
 });
@@ -32,7 +31,7 @@ router.post('/agregar', (req, res) => {
     const apellidoPaciente =  req.body.apellidoPaciente
     const edadPaciente = req.body.edadPaciente
     const telefonoPaciente = req.body.telefonoPaciente
-    connection.query(`INSERT INTO pacientes (cedula,nombre,apellido,edad,telefono) VALUES (${cedulaPaciente},'${nombrePaciente}','${apellidoPaciente}',${edadPaciente},${telefonoPaciente});`, (error, results) => {
+    connection.query(`INSERT INTO pacientes (cedula,nombre,apellido,edad,telefono) VALUES ('${cedulaPaciente}','${nombrePaciente}','${apellidoPaciente}','${edadPaciente}','${telefonoPaciente}');`, (error, results) => {
         if (error) {
             console.log("Error en la consulta", error)
             res.status(500).send("Error en la consulta")
@@ -73,19 +72,25 @@ router.get('/enviar/:clave', function (req, res, next) {
             console.log("Error en la consulta", error)
             res.status(500).send("Error en la consulta")
         } else {
-            res.render('pacientes', { title: 'pacientes', claveSeleccionada: clave, pacientes: results, opcion: 'disabled', estado: false })
+            res.render('pacientes', { 
+                title: 'pacientes',
+                subtitulo: 'EDITAR PACIENTE',
+                claveSeleccionada: clave, 
+                pacientes: results, 
+                opcion: 'disabled', 
+                estado: false })
         }
     });
 });
 router.post('/actualizar/:cedula', (req, res) => {
-    const cedulaPaciente = req.body.cedulaPaciente;
+    const cedulaPaciente = req.params.cedula;
     const nombrePaciente = req.body.nombrePaciente;
     const apellidoPaciente = req.body.apellidoPaciente;
     const edadPaciente = req.body.edadPaciente;
     const telefonoPaciente = req.body.telefonoPaciente;
     console.log("request", req.body)
 
-    connection.query(`UPDATE pacientes SET nombre='${nombrePaciente}', apellido='${apellidoPaciente}', edad=${edadPaciente}, telefono=${telefonoPaciente} WHERE cedula=${cedulaPaciente}`, (error, result) => {
+    connection.query(`UPDATE pacientes SET nombre='${nombrePaciente}', apellido='${apellidoPaciente}', edad='${edadPaciente}', telefono='${telefonoPaciente}' WHERE cedula='${cedulaPaciente}'`, (error, result) => {
         if (error) {
             console.log("Ocurrió un error en la ejecución", error);
             res.status(500).send("Error en la consulta");
