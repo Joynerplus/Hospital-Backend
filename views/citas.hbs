@@ -1,0 +1,31 @@
+<h2>LISTADO DE CITAS VETERINARIAS</h2>
+<table>
+<thead>
+    <tr>
+        <th>Nombre paciente</th>
+        <th>Cedula</th>
+        <th>Nombre medico</th>
+        <th>Consultorio</th>
+        <th>Fecha</th>
+        <th>Opciones</th>
+    </tr>
+</thead>
+<tbody>
+    {{#each citas}}
+    <tr>
+        <td>{{nombrePaciente}} {{apellidoPaciente}}</td>
+        <td>{{id_pacientes}}</td>
+        <td>{{nombreDoctor}} {{apellidoDoctor}}</td>
+        <td>{{consultorio}}</td>
+        <td>{{formatoFecha fecha}}</td>
+        <td><a href="/citas/eliminar/{{id}}">Eliminar</a></td>
+    </tr>
+    {{/each}}
+</tbody>
+</table>
+
+<div id="botones">
+    <input type="button" class="boton" id="botonVolver" value="Volver" onclick="irAlHome()">
+    <input type="button" class="boton" id="botonAgregar" value="Agregar Cita Medica" onclick="agregarCita()">
+</div>
+

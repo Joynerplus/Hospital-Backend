@@ -1,4 +1,5 @@
 <h2>{{subtitulo}}</h2>
+
 <table>
 <thead>
     <tr>
@@ -11,14 +12,18 @@
     </tr>
 </thead>
 <tbody>
-    {{#each medicos}}
+    {{#each pacientes}}
     <tr>
-        <td>{{cedula}}</td>
-        <td>{{nombre}}</td>
-        <td>{{apellido}}</td>
-        <td>{{edad}}</td>
-        <td>{{telefono}}</td>       
+
+        <form action="/pacientes/actualizar/{{cedula}}" method="post">
+        <td><input type="text" class="celdas" id="cedulaPaciente" name="cedulaPaciente" value="{{cedula}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
+        <td><input type="text" class="celdas" id="nombrePaciente" name="nombrePaciente" value="{{nombre}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
+        <td><input type="text" class="celdas" id="apellidoPaciente" name="apellidoPaciente" value="{{apellido}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
+        <td><input type="number" class="celdas" id="edadPaciente" name="edadPaciente" value="{{edad}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
+        <td><input type="number" class="celdas" id="telefonoPaciente" name="telefonoPaciente" value="{{telefono}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>   
+
         <td>
+            {{#if ../estado}}
             <a href="/pacientes/eliminar/{{cedula}}">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -29,16 +34,35 @@
             <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
             </svg>
             </a>
+
+            <a href="/pacientes/enviar/{{@key}}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil-minus" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z" />
+                <path d="M13.5 6.5l4 4" />
+                <path d="M16 18h4" />
+            </svg>
+            </a>
+            {{else}}
+            {{#ifCond @key '==' ../claveSeleccionada}}
+            <input type="submit" value="Enviar">
+            {{/ifCond}}
+            {{/if}}
         </td>
-    </tr>
+        </form>
+    </tr>    
     {{/each}}
 </tbody>
 </table>
 
 <div id="botones">
-  <input type="button" class="boton" id="botonVolver" value="Volver" onclick="irAlHome()">
+  <input type="button" class="boton" id="botonVolver" value="Volver" onclick="irAlHome()"> 
+  {{#if estado}}   
   <input type="button" class="boton" id="botonAgregar" value="agregar pacientes" onclick="agregarPaciente()">
+  {{/if}}
 </div>
+
+
 
 
 

@@ -227,5 +227,32 @@ th {
   font-weight: bold;
 }
 
+.celdas:disabled {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  color: var(--blanco);
+  width: 10rem;
+  text-align: center;
+}
 
+.celdas {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 1.1rem;
+  background: var(--grisClaro);
+  border: none;
+  outline: none;
+  border-radius: 0;
+  color: var(--oscuro);
+  width: 10rem;
+  text-align: center;
+  
+}
 

@@ -21,16 +21,22 @@
         <td>{{consultorio}}</td>
         <td>{{correo}}</td>
         <td>
-            <a href="//eliminar/{{cedula}}">
+            <a href="/medicos/eliminar/{{cedula}}">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M4 7l16 0" />
-            <path d="M10 11l0 6" />
-            <path d="M14 11l0 6" />
-            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 7l16 0" />
+                <path d="M10 11l0 6" />
+                <path d="M14 11l0 6" />
+                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
             </svg>
             </a>
+            <a href="/medicos/actualizar/{{cedula}}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil-minus" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z" />
+                <path d="M13.5 6.5l4 4" />
+            <path d="M16 18h4" />
         </td>
     </tr>
     {{/each}}
@@ -38,8 +44,8 @@
 </table>
 
 <div id="botones">
-  <input type="button" class="boton" id="botonVolver" value="Volver" onclick="irAlHome()">
-  <input type="button" class="boton" id="botonAgregar" value="Agregar Medicos" onclick="agregarMedico()">
+    <input type="button" class="boton" id="botonVolver" value="Volver" onclick="irAlHome()">
+    <input type="button" class="boton" id="botonAgregar" value="Agregar Medicos" onclick="agregarMedico()">
 </div>
 
 

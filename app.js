@@ -9,7 +9,8 @@ const exphbs = require("express-handlebars");//importacion de handelbars
 //importamos rutas
 var indexRouter = require('./routes/index');
 var medicosRouter = require('./routes/medicos');
-var pacientesRouter = require('./routes/pacientes')
+var pacientesRouter = require('./routes/pacientes');
+var citasRouter = require('./routes/citas');
 
 
 var app = express();
@@ -62,6 +63,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/medicos', medicosRouter);
 app.use('/pacientes', pacientesRouter);
+app.use('/citas', citasRouter);
 
 
 // catch 404 and forward to error handler

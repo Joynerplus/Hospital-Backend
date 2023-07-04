@@ -10,3 +10,6 @@ function agregarPaciente() {
     window.location.href = '/pacientes/agregar-paciente';
 }
 
+function agregarCita() {
+    window.location.href = '/citas/agregar-citas';
+}

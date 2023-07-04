@@ -65,6 +65,37 @@ router.get('/eliminar/:cedula', function (req, res, next) {
 
 
 
+//modificar
+router.get('/enviar/:clave', function (req, res, next) {
+    const clave = req.params.clave;
+    connection.query('SELECT * FROM pacientes', (error, results) => {
+        if (error) {
+            console.log("Error en la consulta", error)
+            res.status(500).send("Error en la consulta")
+        } else {
+            res.render('pacientes', { title: 'pacientes', claveSeleccionada: clave, pacientes: results, opcion: 'disabled', estado: false })
+        }
+    });
+});
+router.post('/actualizar/:cedula', (req, res) => {
+    const cedulaPaciente = req.body.cedulaPaciente;
+    const nombrePaciente = req.body.nombrePaciente;
+    const apellidoPaciente = req.body.apellidoPaciente;
+    const edadPaciente = req.body.edadPaciente;
+    const telefonoPaciente = req.body.telefonoPaciente;
+    console.log("request", req.body)
+
+    connection.query(`UPDATE pacientes SET nombre='${nombrePaciente}', apellido='${apellidoPaciente}', edad=${edadPaciente}, telefono=${telefonoPaciente} WHERE cedula=${cedulaPaciente}`, (error, result) => {
+        if (error) {
+            console.log("Ocurrió un error en la ejecución", error);
+            res.status(500).send("Error en la consulta");
+        } else {
+            res.redirect('/pacientes');
+        }
+    });
+});
+
+
 
 
 module.exports = router;
