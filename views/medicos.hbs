@@ -15,7 +15,7 @@
     {{#each medicos}}
     <tr>
         <form action="/medicos/actualizar/{{cedula}}" method="post">  
-        <td><input type="text" class="celdas" id="cedulaMedico" name="cedulaMedico" value="{{cedula}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
+        <td><input type="number" class="celdas" id="cedulaMedico" name="cedulaMedico" value="{{cedula}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
         <td><input type="text" class="celdas" id="nombreMedico" name="nombreMedico" value="{{nombre}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
         <td><input type="text" class="celdas" id="apellidoMedico" name="apellidoMedico" value="{{apellido}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
         <td><input type="text" class="celdas" id="especialidadMedico" name="especialidadMedico" value="{{especialidad}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
@@ -45,7 +45,7 @@
             </a>
             {{else}}
             {{#ifCond @key '==' ../claveSeleccionada}}
-            <input type="submit" value="Enviar">
+            <input type="submit" class="boton" id="botonEnviar" value="Enviar">
             {{/ifCond}}
             {{/if}}
         </td>

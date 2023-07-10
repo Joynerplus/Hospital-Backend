@@ -11,5 +11,5 @@ function agregarPaciente() {
 }
 
 function agregarCita() {
-    window.location.href = '/citas/agregar-citas';
+    window.location.href = '/citas/agregar-cita';
 }

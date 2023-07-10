@@ -6,7 +6,7 @@
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Edad</th>
-        <th>Telefono</th>  
+        <th>Telefono Fijo</th>  
         <th>Opciones</th>
     </tr>
 </thead>
@@ -14,11 +14,11 @@
     {{#each pacientes}}
     <tr>
         <form action="/pacientes/actualizar/{{cedula}}" method="post">
-        <td><input type="text" class="celdas" id="cedulaPaciente" name="cedulaPaciente" value="{{cedula}}" disabled></td>
+        <td><input type="number" class="celdas" id="cedulaPaciente" name="cedulaPaciente" value="{{cedula}}" disabled></td>
         <td><input type="text" class="celdas" id="nombrePaciente" name="nombrePaciente" value="{{nombre}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
         <td><input type="text" class="celdas" id="apellidoPaciente" name="apellidoPaciente" value="{{apellido}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
         <td><input type="number" class="celdas" id="edadPaciente" name="edadPaciente" value="{{edad}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>
-        <td><input type="number" class="celdas" id="telefonoPaciente" name="telefonoPaciente" value="{{telefono}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>   
+        <td><input type="number" maxlength="7" class="celdas" id="telefonoPaciente" name="telefonoPaciente" value="{{telefono}}" {{#ifCond @key '!=' ../claveSeleccionada}}{{../opcion}}{{/ifCond}}></td>   
 
         <td>
             {{#if ../estado}}
@@ -43,12 +43,15 @@
             </a>
             {{else}}
             {{#ifCond @key '==' ../claveSeleccionada}}
-            <input type="submit" value="Enviar">
+            <div>
+            <input type="submit" class="boton" id="botonEnviar" value="Enviar">
+            </div>
             {{/ifCond}}
             {{/if}}
         </td>
         </form>
-    </tr>    
+    </tr> 
+       
     {{/each}}
 </tbody>
 </table>

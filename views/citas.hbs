@@ -1,4 +1,4 @@
-<h2>LISTADO DE CITAS VETERINARIAS</h2>
+<h2>{{subtitulo}}</h2>
 <table>
 <thead>
     <tr>
@@ -13,12 +13,21 @@
 <tbody>
     {{#each citas}}
     <tr>
-        <td>{{nombrePaciente}} {{apellidoPaciente}}</td>
-        <td>{{id_pacientes}}</td>
-        <td>{{nombreDoctor}} {{apellidoDoctor}}</td>
+        <td>{{paciente}} {{apellidoPaciente}}</td>
+        <td>{{id_paciente}}</td>
+        <td>{{nombre}} {{apellido}}</td>
         <td>{{consultorio}}</td>
         <td>{{formatoFecha fecha}}</td>
-        <td><a href="/citas/eliminar/{{id}}">Eliminar</a></td>
+        <td><a href="/citas/eliminar/{{id}}">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 7l16 0" />
+            <path d="M10 11l0 6" />
+            <path d="M14 11l0 6" />
+            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+            </svg>
+        </a></td>
     </tr>
     {{/each}}
 </tbody>

@@ -11,9 +11,10 @@ router.get('/', function (req, res, next) {
         } else {
             res.render('pacientes', {
                 title: 'Pacientes',
-                subtitulo: 'LISTADO DE PACIENTES', medicos: results,
-                pacientes: results, opcion:
-                    'disabled', estado: true
+                subtitulo: 'LISTADO DE PACIENTES', 
+                medicos: results,
+                pacientes: results,
+                 opcion: 'disabled', estado: true
             })
         }
     });

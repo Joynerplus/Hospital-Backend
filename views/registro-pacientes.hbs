@@ -1,5 +1,5 @@
 <div id="formularioPacientes">
-  <form action="./agregar" method="post" id="">
+  <form action="./agregar" method="post">
     <h2>REGISTRO DE PACIENTES</h2>
     <label for="nombrePaciente">Nombre:<span> *</span></label>
     <input type="text" id="nombrePaciente" name="nombrePaciente" required /><br
@@ -14,20 +14,27 @@
     /><br />
 
     <label for="cedulaPaciente">Cedula:<span> *</span></label>
-    <input type="text" id="cedulaPaciente" name="cedulaPaciente" required /><br
+    <input type="number" id="cedulaPaciente" name="cedulaPaciente" maxlength="10" required /><br
     />
 
     <label for="edadPaciente">Edad:<span> *</span></label>
     <input type="number" id="edadPaciente" name="edadPaciente" required /><br />
 
-    <label for="telefonoPaciente">Telefono:<span> *</span></label>
+    <label for="telefonoPaciente">Telefono Fijo:<span> *</span></label>
     <input
       type="number"
       id="telefonoPaciente"
       name="telefonoPaciente"
+      max="9999999"
       required
     /><br />    
     <input id="enviar" type="submit" value="Enviar" />
-    <a class="volver" href="/pacientes">Volver</a>
+    <a class="volver" href="/pacientes">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
+    </svg>
+    </svg>
+    </a>
   </form>
 </div>
